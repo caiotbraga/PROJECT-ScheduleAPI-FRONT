@@ -44,7 +44,7 @@ import axios from 'axios'
         },
         methods: {
             getUsers(){
-                axios.get('https://localhost:7156').then(res => {
+                axios.get('http://localhost:7156/user').then(res => {
                     console.log(res)
                 });
             }
