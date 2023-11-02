@@ -26,7 +26,7 @@ import HelloWorld from './components/HelloWorld.vue'
                 <RouterLink class="nav-link" to="/users">Users</RouterLink>
               </li>
             </ul>
-            
+
           </div>
         </div>
       </nav>
@@ -36,6 +36,4 @@ import HelloWorld from './components/HelloWorld.vue'
   <RouterView />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
