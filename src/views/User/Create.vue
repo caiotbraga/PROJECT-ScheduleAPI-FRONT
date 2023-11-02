@@ -17,7 +17,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="">Email</label>
-                    <input type="text" v-model="model.user.Email" class="form-control" />
+                    <input type="text" v-model="model.user.email" class="form-control" />
                     <span v-if="buttonPressed && !model.user.email" class="text-danger">Email is required</span>
                 </div>
                 <div class="mb-3">
@@ -66,6 +66,7 @@ export default {
 
                     console.log(res.data)
                     alert("User " + this.model.user.userName + " Created")
+                    this.buttonPressed = false;
                     alert(res.data.message);
 
                     this.model.user = {
