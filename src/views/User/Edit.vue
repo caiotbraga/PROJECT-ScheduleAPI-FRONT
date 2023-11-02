@@ -2,14 +2,9 @@
     <div class="container mt-5">
         <div class="card">
             <div class="card-header">
-                <h4>Add User</h4>
+                <h4>Edit User</h4>
             </div>
             <div class="card-body">
-                <!-- <ul class="alert alert-warning" v-if="errorList.length > 0">
-                    <li class="mb-0 ms-3" v-for="(error, index) in errorList" :key="index">
-                        {{ error.message }}
-                    </li>
-                </ul> -->
                 <div class="mb-3">
                     <label for="">Name</label>
                     <input type="text" v-model="model.user.userName" class="form-control" />
@@ -23,10 +18,11 @@
                 <div class="mb-3">
                     <label for="">Number</label>
                     <input type="text" v-model="model.user.phoneNumber" class="form-control" />
-                    <span v-if="buttonPressed && !model.user.phoneNumber" class="text-danger">Phone Number is required</span>
+                    <span v-if="buttonPressed && !model.user.phoneNumber" class="text-danger">Phone Number is
+                        required</span>
                 </div>
                 <div class="mb-3">
-                    <button type="button" @click="saveUser" class="btn btn-primary">Save</button>
+                    <button type="button" @click="updateUser" class="btn btn-primary">Update</button>
                 </div>
             </div>
         </div>
@@ -37,7 +33,7 @@
 import axios from 'axios';
 
 export default {
-    name: 'userCreate',
+    name: 'userEdit',
     data() {
         return {
             errorList: [],
@@ -51,24 +47,37 @@ export default {
             buttonPressed: false
         }
     },
+    mounted() {
+        this.getUserData(this.$route.params.id)
+
+    },
     methods: {
 
-        saveUser() {
+        getUserData(userId) {
+            axios.get(`http://localhost:7156/users/edit/${userId}`)
+                .then(res => {
+                    this.model.user = res.data
+                })
+                .catch(error => {
+                    this.$router.replace('/users');
+                    alert('User not found');
+                });;
+        },
+
+        updateUser(userId) {
             this.buttonPressed = true;
 
-            axios.post('http://localhost:7156/user', this.model.user)
+            const userUpdateData = {
+                userName: this.model.user.userName,
+                email: this.model.user.email,
+                phoneNumber: this.model.user.phoneNumber
+            };
+
+            axios.put(`http://localhost:7156/user/${this.$route.params.id}`, userUpdateData)
                 .then(res => {
-
-                    console.log(res.data)
-                    alert("User " + this.model.user.userName + " Created")
+                    alert("User " + this.model.user.userName + " sucessfully updated")
                     this.buttonPressed = false;
-                    alert(res.data.message);
-
-                    this.model.user = {
-                        userName: '',
-                        email: '',
-                        phoneNumber: ''
-                    }
+                    this.$router.replace('/users');
                 })
                 .catch(error => {
                     this.errorList = [{ message: 'An error occurred while creating the user' }];

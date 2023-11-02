@@ -27,7 +27,7 @@
                             <td>{{ users.email }}</td>
                             <td>{{ users.phoneNumber }}</td>
                             <td class="buttons-c" id="align-buttons">
-                                <RouterLink to="/" class="btn btn-primary text-center align-middle">
+                                <RouterLink :to="{ path: '/users/edit/'+users.id }" class="btn btn-primary text-center align-middle">
                                     Edit
                                 </RouterLink>
                                 <button type="button" class="btn btn-danger text-center align-middle">
