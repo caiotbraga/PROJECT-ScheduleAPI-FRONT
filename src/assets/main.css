@@ -1,2 +1,13 @@
 @import './base.css';
 @import 'bootstrap';
+
+#user-table{
+    margin-top: 30px;
+}
+
+#align-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}

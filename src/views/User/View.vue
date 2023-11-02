@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="card">
+    <div class="container">
+        <div class="card" id="user-table">
             <div class="card-header">
                 <h4>
                     Users
@@ -12,16 +12,28 @@
             <div class="card-body">
                 <table class="table table-bordered">
                     <thead>
-                        <tr>
-                            <th>Id</th>
+                        <tr class="text-center">
+                            <th >Id</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Number</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-
+                        <tr v-for="(users, index) in this.users" :key="index" class="text-center">
+                            <td>{{ users.id }}</td>
+                            <td>{{ users.userName }}</td>
+                            <td>{{ users.email }}</td>
+                            <td>{{ users.phoneNumber }}</td>
+                            <td class="buttons-c" id="align-buttons">
+                                <RouterLink to="/" class="btn btn-primary text-center align-middle">
+                                    Edit
+                                </RouterLink>
+                                <button type="button" class="btn btn-danger text-center align-middle">
+                                    Delete
+                                </button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -33,21 +45,23 @@
 <script>
 import axios from 'axios'
 
-    export default{
-        name: 'users',
-        data(){
+export default {
+    name: 'users',
+    data() {
+        return{
             users: []
-        },
-        mounted(){
-            this.getUsers();
-            console.log('I am here')
-        },
-        methods: {
-            getUsers(){
-                axios.get('http://localhost:7156/user').then(res => {
-                    console.log(res)
-                });
-            }
-        },
-    }
+        } 
+    },
+    mounted() {
+        this.getUsers();
+    },
+    methods: {
+        getUsers() {
+            axios.get('http://localhost:7156/user').then(res => {
+                this.users = res.data;
+                console.log(this.users);
+            });
+        }
+    },
+}
 </script>
