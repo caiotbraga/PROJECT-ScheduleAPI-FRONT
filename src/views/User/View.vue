@@ -30,7 +30,7 @@
                                 <RouterLink :to="{ path: '/users/edit/'+users.id }" class="btn btn-primary text-center align-middle">
                                     Edit
                                 </RouterLink>
-                                <button type="button" class="btn btn-danger text-center align-middle">
+                                <button type="button" @click="deleteUser(users.id)"  class="btn btn-danger text-center align-middle">
                                     Delete
                                 </button>
                             </td>
@@ -61,7 +61,21 @@ export default {
                 this.users = res.data;
                 console.log(this.users);
             });
+        },
+        deleteUser(userId){
+        if(confirm('Are you sure that you want to delete this user?')){
+            axios.delete(`http://localhost:7156/user/${userId}`)
+            .then(res => {
+                alert("User sucessfully deleted!")
+                this.getUsers();
+                this.$router.replace('/users');
+            })
+            .catch(error => {
+                    this.errorList = [{ message: 'An error occurred while creating the user' }];
+                    console.error(error);
+                });;
         }
+    }
     },
 }
 </script>
