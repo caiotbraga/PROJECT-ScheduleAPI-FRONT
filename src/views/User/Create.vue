@@ -5,11 +5,6 @@
                 <h4>Add User</h4>
             </div>
             <div class="card-body">
-                <!-- <ul class="alert alert-warning" v-if="errorList.length > 0">
-                    <li class="mb-0 ms-3" v-for="(error, index) in errorList" :key="index">
-                        {{ error.message }}
-                    </li>
-                </ul> -->
                 <div class="mb-3">
                     <label for="">Name</label>
                     <input type="text" v-model="model.user.userName" class="form-control" />
@@ -62,8 +57,7 @@ export default {
                     console.log(res.data)
                     alert("User " + this.model.user.userName + " Created")
                     this.buttonPressed = false;
-                    alert(res.data.message);
-
+                    this.$router.replace('/users');
                     this.model.user = {
                         userName: '',
                         email: '',
