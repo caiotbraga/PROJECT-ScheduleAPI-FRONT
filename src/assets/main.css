@@ -11,3 +11,8 @@
     justify-content: center;
     gap: 20px;
 }
+
+.about .txt-about h2{
+    font-size: 40px;
+    line-height: 45px;
+}
