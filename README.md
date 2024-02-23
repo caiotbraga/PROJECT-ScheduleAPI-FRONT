@@ -99,3 +99,7 @@ To add new features, follow these steps:
 3. If required, update the Vuex store in `src/store/` to manage state related to the new features.
 4. Include any additional assets in the `src/assets/` directory.
 5. Integrate any APIs or backend services as needed.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
