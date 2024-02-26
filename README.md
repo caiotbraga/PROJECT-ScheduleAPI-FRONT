@@ -52,7 +52,7 @@ schedule-api-frontend/
 
 ## Recommended IDE Setup <a name="recommended-ide-setup"></a>
 
-We recommend using the following setup for an optimal development experience:
+Vue documentation recommend using the following setup for an optimal development experience:
 
 - [Visual Studio Code](https://code.visualstudio.com/) with [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) extension (disable Vetur) and [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
