@@ -1,6 +1,12 @@
-# ScheduleAPI Front End Documentation
+<h1 align="center">ScheduleAPI Front End Documentation</h2>
 
-This documentation provides guidance on setting up and developing the front end of the ScheduleAPI project using Vue.js.
+<p align="center">This documentation provides guidance on setting up and developing the front end of the ScheduleAPI project using Vue.js.</p>
+
+<h2 align="center">💻Technologies useds</h2>
+<p align="center">
+    <img alt="Vue.js 3" src="https://img.shields.io/badge/Vue.js-3.0.0-green?logo=vue.js">
+</a>
+</p>
 
 ## Table of Contents
 
