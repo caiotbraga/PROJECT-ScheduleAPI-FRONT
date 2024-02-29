@@ -4,7 +4,9 @@
 
 <h2 align="center">💻Technologies useds</h2>
 <p align="center">
-    <img alt="Vue.js 3" src="https://img.shields.io/badge/Vue.js-3.0.0-green?logo=vue.js">
+   <a href="https://v3.vuejs.org/" target="_blank">
+    <img alt="Vue.js 3" src="https://img.shields.io/badge/Vue.js-3.3.4-green?logo=vue.js">
+  </a>
 </a>
 </p>
 
