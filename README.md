@@ -4,9 +4,8 @@
 
 <h2 align="center">💻Technologies useds</h2>
 <p align="center">
-   <a href="https://v3.vuejs.org/" target="_blank">
-    <img alt="Vue.js 3" src="https://img.shields.io/badge/Vue.js-3.3.4-green?logo=vue.js">
-  </a>
+   <a href="https://v3.vuejs.org/" target="_blank"><img alt="Vue.js 3" src="https://img.shields.io/badge/Vue.js-3.3.4-green?logo=vue.js"></a>
+   <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank"><img src="https://img.shields.io/badge/Bootstrap-5.3.2-7952B3?logo=bootstrap&logoColor=white" alt="Bootstrap 5.3.2 Badge"></a>
 </a>
 </p>
 
